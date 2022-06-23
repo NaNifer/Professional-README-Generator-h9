@@ -38,6 +38,7 @@ const questions = [
         message: 'What license would you like cover under your app?',
         name: 'license',
         // ADD A LIST TO CHOOSE FROM
+        default: 
         // validate that the user provided a value??
     },
     {
@@ -94,10 +95,21 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+        .prompt(questions)
+        .then(answers => {
+            writeToFile(answers.fileName, answers);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+};
 
 // Function call to initialize app
 init();
