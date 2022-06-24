@@ -24,18 +24,39 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) { }
+function renderLicenseLink(license) { 
+  switch (license) {
+    case 'Apache 2.0':
+      return '[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)';
+    case 'MIT':
+      return '[MIT License](https://mit-license.org/)';
+    case 'Mozilla 2.0':
+      return '[Mozilla 2.0 License](https://www.mozilla.org/en-US/MPL/2.0/)';
+    case '2-Clause BSD':
+      return '[2-Clause BSD License](https://opensource.org/licenses/BSD-2-Clause)';
+    default:
+      return '';
+  }
+};
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) { }
+function renderLicenseSection(license) { 
+  switch (license) {
+    case true:
+      return `More details about the license used can be found here: ${renderLicenseLink(license)}`;
+    default:
+      return '';
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  let licBadge = renderLicenseBadge(data.license);
+  let licenseBadge = renderLicenseBadge(data.license);
+  let licenseSect = renderLicenseSection(data.license);
 
   return `
-  ${licBadge}
+  ${licenseBadge}
 
   # ${data.title}
 
@@ -70,7 +91,7 @@ ${data.installation}
 ## Usage
 
 ### License 
-${data.license}
+${licenseSect}
 
 ### Tests 
 ${data.tests}
