@@ -1,6 +1,18 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  
+}
+
+
+
+
+// Apache -- https://www.apache.org/licenses/LICENSE-2.0 -- https://img.shields.io/badge/license-Apache--2.0-green
+// MIT -- https://mit-license.org/ -- https://img.shields.io/badge/license-MIT-blue
+// Mozilla -- https://www.mozilla.org/en-US/MPL/2.0/ -- https://img.shields.io/badge/license-Mozilla%202.0-orange
+// 2-Clause BSD -- https://opensource.org/licenses/BSD-2-Clause -- https://img.shields.io/badge/license-2--Clause%20BSD-violet
+
+
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string

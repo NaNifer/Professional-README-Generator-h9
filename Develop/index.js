@@ -34,12 +34,12 @@ const questions = [
         // validate that the user provided a value??
     },
     {
-        type: 'input',
+        type: 'list',
         message: 'What license would you like cover under your app?',
         name: 'license',
-        // ADD A LIST TO CHOOSE FROM
-        // default: 
-        // validate that the user provided a value??
+        choices: ['MIT', 'Mozilla 2.0', '2-Clause BSD', 'Apache 2.0', 'No license'],
+        default: ['No License']
+
     },
     {
         type: 'input',
