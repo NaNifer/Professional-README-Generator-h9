@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -38,7 +38,7 @@ const questions = [
         message: 'What license would you like cover under your app?',
         name: 'license',
         // ADD A LIST TO CHOOSE FROM
-        default: 
+        // default: 
         // validate that the user provided a value??
     },
     {
