@@ -37,7 +37,7 @@ const questions = [
         type: 'list',
         message: 'What license would you like cover under your app?',
         name: 'license',
-        choices: ['MIT', 'Mozilla 2.0', '2-Clause BSD', 'Apache 2.0', 'No license'],
+        choices: ['Apache 2.0', 'MIT', 'Mozilla 2.0', '2-Clause BSD', 'No license'],
         default: ['No License']
 
     },
@@ -96,8 +96,20 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+    fs.writeFile(`README.md`, generateMarkdown(data), err => {
+        if (err) {
+            console.log(err, "writeToFile");
+            return;
+        }
+        else {
+            console.log("yay!");
+        }
+    }
+    )
 };
+
+
+
 
 // TODO: Create a function to initialize app
 function init() {
