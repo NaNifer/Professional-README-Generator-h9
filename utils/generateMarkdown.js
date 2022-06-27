@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   switch (license) {
@@ -15,16 +15,9 @@ function renderLicenseBadge(license) {
   }
 }
 
-// Apache -- https://www.apache.org/licenses/LICENSE-2.0 -- https://img.shields.io/badge/license-Apache--2.0-green
-// MIT -- https://mit-license.org/ -- https://img.shields.io/badge/license-MIT-blue
-// Mozilla -- https://www.mozilla.org/en-US/MPL/2.0/ -- https://img.shields.io/badge/license-Mozilla%202.0-orange
-// 2-Clause BSD -- https://opensource.org/licenses/BSD-2-Clause -- https://img.shields.io/badge/license-2--Clause%20BSD-violet
-
-
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) { 
+// Function that returns the license link
+// If there is no license, returns an empty string
+function renderLicenseLink(license) {
   switch (license) {
     case 'Apache 2.0':
       return '[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0)';
@@ -39,18 +32,17 @@ function renderLicenseLink(license) {
   }
 };
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) { 
-  switch (license) {
-    case true:
-      return `More details about the license used can be found here: ${renderLicenseLink(license)}`;
-    default:
-      return '';
+// Function that returns the license section of README
+function renderLicenseSection(license) {
+  console.log(license);
+  if (license !== 'No license') {
+    return `More details about the license used can be found here: ${renderLicenseLink(license)}`;
+  } else {
+    return '';
   }
-}
+};
 
-// TODO: Create a function to generate markdown for README
+// Function to generate markdown for README
 function generateMarkdown(data) {
   let licenseBadge = renderLicenseBadge(data.license);
   let licenseSect = renderLicenseSection(data.license);
@@ -109,6 +101,7 @@ ${data.whatIlearned}
 ${data.continuedDevel}
 
 ## Questions
+Got a question? You can reach out to me via the contact info below!
 
 ### Author
 
